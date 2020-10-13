@@ -1,0 +1,60 @@
+<div class="p-fluid">
+    <div class="p-grid">
+        <div class="p-col">
+            <div class="box"></div>
+        </div>
+        <div class="p-col">
+            <div class="box">
+                <p-card header="Inicio de sesión" subheader="Empaquetadores" styleClass="p-card-shadow">
+                    <p-header>
+                        <img alt="Card" src="assets/img/bolsas_papel.jpg" width="40" height="200">
+                    </p-header>
+                    <div class="p-field p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                            <span class="p-float-label">
+                                <input type="text" id="firstname1" pInputText>
+                                <label for="inputgroup">Usuario</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon" (click)="showPassword=!showPassword" pTooltip="Mostrar"
+                                tooltipPosition="bottom">
+                                <i class="pi pi-lock"></i>
+                            </span>
+                            <span class="p-float-label">
+                                <input type="password" [showPassword]="showPassword" [feedback]="false" pPassword />
+                                <label for="inputgroup">Contraseña</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-field-checkbox p-col-12 p-md-12">
+                        <div class="p-grid">
+                            <div class="p-col-12">
+                                <p-checkbox binary="true" inputId="binary"></p-checkbox>
+                                <label for="binary">Recuérdame</label>
+                            </div>
+                            <div class="p-col-12">
+                                <label for="olvido">¿Olvidó la contraseña?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-grid">
+                        <button pButton pRipple type="button" label="Iniciar Sesión" class="p-button-raised"
+                            icon="pi pi-sign-in"></button>
+                    </div>
+                    <!-- <ng-template pTemplate="footer">
+                        <p-button label="Iniciar Sesión" icon="pi pi-sign-in"></p-button>
+                    </ng-template> -->
+                </p-card>
+            </div>
+        </div>
+        <div class="p-col">
+            <div class="box"></div>
+        </div>
+    </div>
+</div>
