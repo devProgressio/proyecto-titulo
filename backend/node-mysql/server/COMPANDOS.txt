@@ -1,0 +1,10 @@
+npm init --yesnpm
+npm i express morgan promise-mysql cors
+npm install -g typescript
+tsc --init
+
+En la carpeta build se genero el javascript.
+node build/index.js para ejecutar el index.js
+
+se agregó a package.json build: tsc -w, para ejecutarlo:
+npm run build

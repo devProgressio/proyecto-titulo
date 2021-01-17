@@ -1,0 +1,10 @@
+﻿{
+    "database": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "admin",
+        "password": "admin123.",
+        "database": "empresa"
+    },
+    "secret": "cde2011a-772f-40d9-b9b4-fe42ecd75904"
+}
