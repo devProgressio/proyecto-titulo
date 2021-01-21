@@ -19,6 +19,8 @@ import { PasswordModule } from 'primeng/password';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TooltipModule } from 'primeng/tooltip';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { MenubarModule } from 'primeng/menubar';
+import { SidebarModule } from 'primeng/sidebar';
 
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -33,7 +35,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     RegisterComponent,
     BreadcrumbsComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +43,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      { path: '', component: LoginComponent }]),
+    RouterModule.forRoot([{ path: '', component: LoginComponent }]),
     InputTextModule,
     CardModule,
     ButtonModule,
@@ -51,9 +52,11 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     PasswordModule,
     CheckboxModule,
     TooltipModule,
-    OverlayPanelModule
+    OverlayPanelModule,
+    MenubarModule,
+    SidebarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
