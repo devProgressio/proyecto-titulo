@@ -27,6 +27,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { ProgressComponent } from './pages/progress/progress.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     BreadcrumbsComponent,
     HeaderComponent,
     SidebarComponent,
+    ProgressComponent,
+    PagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,6 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     MenubarModule,
     SidebarModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
