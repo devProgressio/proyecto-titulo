@@ -19,6 +19,9 @@ dbConnection();
 //user: mean_user
 //pass: fJgBJvXlXTK4L6F1
 
+// Directorio público
+app.use(express.static('public'));
+
 //Rutas
 app.use('/api/usuarios', require('./router/usuarios'));
 app.use('/api/login', require('./router/auth'));
