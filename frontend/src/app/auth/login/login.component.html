@@ -1,69 +1,45 @@
-<div class="p-fluid">
-    <div class="p-grid">
-        <div class="p-col">
-            <div class="box"></div>
-        </div>
-        <div class="p-col">
-            <div class="box">
-                <p-card header="Inicio de sesión" subheader="Empaquetadores" styleClass="p-card-shadow">
-                    <p-header>
-                        <img alt="Card" src="assets/img/bolsas_papel.jpg" width="40" height="200">
-                    </p-header>
-                    <div class="p-field p-col-12 p-md-12">
-                        <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon">
-                                <i class="pi pi-user"></i>
-                            </span>
-                            <span class="p-float-label">
-                                <input type="text" id="firstname1" pInputText>
-                                <label for="inputgroup">Usuario</label>
-                            </span>
+<div class="main">
+
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="../../../assets/login/images/signin-image.jpg" alt="sing up image"></figure>
+                    <a routerLink="/register" class="signup-image-link">Crear una cuenta</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Iniciar Sesión</h2>
+                    <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()" class="register-form" id="login-form">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="email" formControlName="email" name="your_name" id="your_name" placeholder="Correo" />
                         </div>
-                    </div>
-                    <div class="p-field p-col-12 p-md-12">
-                        <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon" (click)="showPassword=!showPassword" pTooltip="Mostrar"
-                                tooltipPosition="bottom">
-                                <i class="pi pi-lock"></i>
-                            </span>
-                            <span class="p-float-label">
-                                <input type="password" [showPassword]="showPassword" [feedback]="false" pPassword />
-                                <label for="inputgroup">Contraseña</label>
-                            </span>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" formControlName="password" name="your_pass" id="your_pass" placeholder="Contraseña" />
                         </div>
-                    </div>
-                    <div class="p-d-flex p-flex-column p-col-12 p-md-12">
-                        <div class="p-mb-2">
-                            <p-checkbox binary="true" inputId="binary"></p-checkbox>
-                            <label for="binary"> Recuérdame</label>
+                        <div class="form-group">
+                            <input type="checkbox" formControlName="remember" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term">Recuérdame</label>
                         </div>
-                        <div class="p-mb-2"><label for="olvido" (click)="op.toggle($event)">¿Olvidó la
-                                contraseña?</label></div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Ingresar" />
+                        </div>
+                    </form>
+                    <div class="social-login">
+                        <div id="my-signin2"></div>
+                        <!-- <span class="social-label">O inicie sesión con</span>
+                        <ul class="socials">
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        </ul> -->
                     </div>
-                    <div class="p-field p-col-12 p-md-12">
-                        <button pButton pRipple type="button" label="Iniciar Sesión" class="p-button-raised"
-                            icon="pi pi-sign-in"></button>
-                    </div>
-                </p-card>
+                </div>
             </div>
         </div>
-        <div class="p-col">
-            <div class="box"></div>
-        </div>
-    </div>
+    </section>
+
 </div>
-
-
-<p-overlayPanel #op>
-    <ng-template pTemplate>
-        <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-envelope"></i>
-            </span>
-            <span class="p-float-label">
-                <input type="text" id="mail" pInputText>
-                <label for="inputgroup">Ingrese su correo</label>
-            </span>
-        </div>
-    </ng-template>
-</p-overlayPanel>

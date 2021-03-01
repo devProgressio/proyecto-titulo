@@ -23,6 +23,7 @@
     "primeicons": "^4.0.0",
     "primeng": "^10.0.3",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^10.15.5",
     "tslib": "^1.14.1",
     "zone.js": "~0.10.2"
   },

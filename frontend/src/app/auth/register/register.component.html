@@ -1,67 +1,51 @@
-<div class="p-fluid">
-    <div class="p-grid">
-        <div class="p-col">
-            <div class="box"></div>
-        </div>
-        <div class="p-col">
-            <div class="box">
-                <p-card header="Registrar" subheader="Empaquetadores" styleClass="p-card-shadow">
-                    <p-header>
-                        <img alt="Card" src="assets/img/bolsas_papel.jpg" width="40" height="200">
-                    </p-header>
-                    <div class="p-field p-col-12 p-md-12">
-                        <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon">
-                                <i class="pi pi-user"></i>
-                            </span>
-                            <span class="p-float-label">
-                                <input type="text" id="firstname1" pInputText>
-                                <label for="inputgroup">Usuario</label>
-                            </span>
+<div class="main">
+
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Registrate</h2>
+                    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="crearUsuario()" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" formControlName="nombre" name="name" id="name" placeholder="Nombre" />
                         </div>
-                    </div>
-                    <div class="p-field p-col-12 p-md-12">
-                        <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon" (click)="showPassword=!showPassword" pTooltip="Mostrar" tooltipPosition="bottom">
-                                <i class="pi pi-lock"></i>
-                            </span>
-                            <span class="p-float-label">
-                                <input type="password" [showPassword]="showPassword" [feedback]="false" pPassword />
-                                <label for="inputgroup">Contraseña</label>
-                            </span>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" formControlName="email" name="email" id="email" placeholder="Correo" />
                         </div>
-                    </div>
-                    <div class="p-d-flex p-flex-column p-col-12 p-md-12">
-                        <div class="p-mb-2">
-                            <p-checkbox binary="true" inputId="binary"></p-checkbox>
-                            <label for="binary"> Recuérdame</label>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" formControlName="password" name="pass" id="pass" placeholder="Contraseña" />
                         </div>
-                        <div class="p-mb-2"><label for="olvido" (click)="op.toggle($event)">¿Olvidó la
-                                contraseña?</label></div>
-                    </div>
-                    <div class="p-field p-col-12 p-md-12">
-                        <button pButton pRipple type="button" label="Iniciar Sesión" class="p-button-raised" icon="pi pi-sign-in"></button>
-                    </div>
-                </p-card>
+                        <div class="form-group">
+                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="password" formControlName="password2" name="re_pass" id="re_pass" placeholder="Repite tu contraseña" />
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" formControlName="terminos" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                        </div>
+                        <div class="form-group">
+                            <div class="text-danger">
+                                <p><small *ngIf="campoNoValido('nombre')" id="username2-help" class="p-error">*El nombre es obligatorio.</small></p>
+                                <p><small *ngIf="campoNoValido('email')" id="username2-help" class="p-error">*El correo es obligatorio y tiene que ser válido.</small></p>
+                                <p><small *ngIf="contrasenasNoValidas()" id="username2-help" class="p-error">*Las contraseñas deben ser iguales.</small></p>
+                                <p><small *ngIf="aceptarTerminos()" id="username2-help" class="p-error">Debe de aceptar los términos y uso.</small></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="../../../assets/login/images/signup-image.jpg" alt="sing up image"></figure>
+                    <a routerLink="/login" class="signup-image-link">Ya soy miembro</a>
+                </div>
             </div>
         </div>
-        <div class="p-col">
-            <div class="box"></div>
-        </div>
-    </div>
+    </section>
+
 </div>
-
-
-<p-overlayPanel #op>
-    <ng-template pTemplate>
-        <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-envelope"></i>
-            </span>
-            <span class="p-float-label">
-                <input type="text" id="mail" pInputText>
-                <label for="inputgroup">Ingrese su correo</label>
-            </span>
-        </div>
-    </ng-template>
-</p-overlayPanel>
