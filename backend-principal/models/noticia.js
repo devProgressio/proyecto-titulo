@@ -13,7 +13,7 @@ const NoticiaSchema = Schema({
         type: Number,
         default: 0
     },
-    usuario: {
+    usuarioCreador: {
         type: Schema.Types.ObjectId,
         ref: 'Usuario'
     }

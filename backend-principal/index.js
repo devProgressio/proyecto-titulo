@@ -25,6 +25,7 @@ app.use(express.static('public'));
 //Rutas
 app.use('/api/usuarios', require('./router/usuarios'));
 app.use('/api/login', require('./router/auth'));
+app.use('/api/upload', require('./router/uploads'));
 
 
 app.listen(process.env.PORT, () => {

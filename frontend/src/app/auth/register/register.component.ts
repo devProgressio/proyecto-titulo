@@ -37,21 +37,21 @@ export class RegisterComponent implements OnInit {
     this.formSubmitted = true;
     console.log(this.registerForm.value);
 
-    if (this.registerForm.invalid) {
+    if (this.registerForm.invalid || !this.registerForm.get('terminos').value) {
       return;
     }
+      // Realizar el posteo
+      this.usuarioService.crearUsuario(this.registerForm.value).subscribe(
+        (resp) => {
+          // Navegar al dashboard
+          this.router.navigateByUrl('/');
+        },
+        (err) => {
+          //Sucede un error
+          Swal.fire('Error', err.error.msg, 'error');
+        }
+      );
 
-    // Realizar el posteo
-    this.usuarioService.crearUsuario(this.registerForm.value).subscribe(
-      (resp) => {
-        // Navegar al dashboard
-        this.router.navigateByUrl('/');
-      },
-      (err) => {
-        //Sucede un error
-        Swal.fire('Error', err.error.msg, 'error');
-      }
-    );
   }
 
   campoNoValido(campo: string): boolean {

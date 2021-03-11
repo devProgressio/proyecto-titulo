@@ -1,3 +1,7 @@
+import { environment } from '../environments/environment';
+
+const base_url = environment.base_url;
+
 export class Usuario {
     constructor(
         public nombre: string,
@@ -7,7 +11,11 @@ export class Usuario {
         public google?: boolean,
         public role?: string,
         public uid?: string,
-    ) {
-        
+    ) {}
+
+    get imagenUrl() {
+        const image = base_url.concat('/upload/usuarios/').concat(this.img);
+        const noImage = base_url.concat('/upload/usuarios/no-image');
+        return this.img ? image : noImage;
     }
 }
