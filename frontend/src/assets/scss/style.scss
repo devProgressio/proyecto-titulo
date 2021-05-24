@@ -4,8 +4,6 @@ Author: Wrappixel
 Email: niravjoshi87@gmail.com
 File: scss
 */
-
-
 /**
  * Table Of Content
  *
@@ -18,18 +16,21 @@ File: scss
  *	7. Widgets
  *	8. Custom Templates
  */
-
-@import 'variable';
+ 
+@import 'variable'; 
 @import 'app';
 @import 'sidebar';
-@import 'pages/pages';
+@import 'pages/pages'; 
 @import '../scss/icons/font-awesome/css/font-awesome.min.css';
 @import '../scss/icons/simple-line-icons/css/simple-line-icons.css';
+@import '../scss/icons/weather-icons/css/weather-icons.min.css';
 @import '../scss/icons/linea-icons/linea.css';
-@import '../scss/icons/themify-icons/themify-icons.css';
+@import '../scss/icons/themify-icons/themify-icons.css'; 
+@import '../scss/icons/flag-icon-css/flag-icon.min.css';
 @import "../scss/icons/material-design-iconic-font/css/materialdesignicons.min.css";
 @import 'widgets/widgets';
 @import 'grid';
-@import 'responsive';
+@import 'responsive'; 
 @import '../css/spinners.css';
-@import '../css/animate.css';
+@import '../css/animate.css';   
+   

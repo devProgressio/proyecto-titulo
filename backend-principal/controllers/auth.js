@@ -65,7 +65,6 @@ const googleSignIn = async(req, res = response) => {
                 password: '@@@',
                 img: picture,
                 google: true
-
             })
             console.log('entro a no existe');
             console.log(usuario);
@@ -95,7 +94,7 @@ const googleSignIn = async(req, res = response) => {
 
         res.status(401).json({
             ok: false,
-            msg: 'Token no es correcto xx'
+            msg: 'Token no es correcto'
         })
     }
 }

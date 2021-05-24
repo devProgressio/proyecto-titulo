@@ -14,6 +14,12 @@ export class Usuario {
     ) {}
 
     get imagenUrl() {
+
+        // si es una img desde google, ya viene construida.
+        if (this.img && this.img.includes('https')) {
+            return this.img;
+        }
+
         const image = base_url.concat('/upload/usuarios/').concat(this.img);
         const noImage = base_url.concat('/upload/usuarios/no-image');
         return this.img ? image : noImage;

@@ -9,7 +9,7 @@ const getUsuarios = async(req, res = response) => {
 
     const desde = Number(req.query.desde) || 0;
 
-
+    // SKIP se salta todos los registros desde la variable desde.
     const [usuarios, total] = await Promise.all([
         Usuario
         .find({}, 'nombre email role google img')

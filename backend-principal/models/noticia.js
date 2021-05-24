@@ -6,6 +6,11 @@ const NoticiaSchema = Schema({
         type: String,
         required: true
     },
+    fechaHoraCreacion: {
+        // Esta fecha hora deberia ser automatica al grabar la fecha.
+        type: Date,
+        default: new Date()
+    },
     img: {
         type: String
     },
@@ -13,15 +18,20 @@ const NoticiaSchema = Schema({
         type: Number,
         default: 0
     },
-    usuarioCreador: {
+    usuario: {
         type: Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Usuario',
+        required: true
+    },
+    activaHasta: {
+        type: Date,
+        requiered: true
     }
 }, { collection: 'noticia' });
 
 NoticiaSchema.method('toJSON', function() {
     const { __v, _id, ...object } = this.toObject();
-    object.uid = _id;
+    object.id = _id;
     return object;
 })
 
